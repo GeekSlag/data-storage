@@ -3,6 +3,7 @@
 #include <string.h>
 #include "list.h"
 
+/* Complexity: O(1) */
 void list_init(list_t *list, int elmt_size, int (*match)(const void *key1, const void *key2))
 {
 	list->size = 0;
@@ -14,6 +15,7 @@ void list_init(list_t *list, int elmt_size, int (*match)(const void *key1, const
 	return;
 }
 
+/* Complexity: O(n) */
 void list_destroy(list_t *list)
 {
 	while (list_size(list) > 0)
@@ -23,7 +25,7 @@ void list_destroy(list_t *list)
 	return;
 }
 
-
+/* Complexity: O(1) */
 int list_insert(list_t *list, const void *key, const void *data)
 {
 	list_elmt_t *new_element;
@@ -47,6 +49,7 @@ int list_insert(list_t *list, const void *key, const void *data)
 	return 0;
 }
 
+/* Complexity: O(n) */
 int list_remove(list_t *list, const void *key)
 {
 	list_elmt_t *old_element;
@@ -87,6 +90,7 @@ int list_remove(list_t *list, const void *key)
 	return 0;
 }
 
+/* Complexity: O(n) */
 int list_search(list_t *list, const void *key, void *data)
 {
 	list_elmt_t *element;
